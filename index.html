@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PT Ecogreen Oleochemicals</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://www.ecogreenoleo.com/frontend/web/img/favicon.png">
+  <link rel="apple-touch-icon" href="https://www.ecogreenoleo.com/frontend/web/img/favicon.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            ecogreen: {
+              400: '#34d399',
+              500: '#10b981',
+              600: '#00875a',
+              700: '#006d48',
+              800: '#044e34',
+              900: '#022c1e',
+            },
+            darkBg: '#090d16',
+          },
+          animation: {
+            'float-subtle': 'float 3.5s ease-in-out infinite',
+            'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-6px)' },
+            },
+            pulseSoft: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '0.6' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #090d16;
+      color: #ffffff;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    /* Ambient Industrial Glow */
+    .ecogreen-dark-bg {
+      background: 
+        radial-gradient(circle at 50% 30%, rgba(0, 135, 90, 0.32) 0%, rgba(9, 13, 22, 0.94) 65%, #090d16 100%),
+        #090d16;
+    }
+
+    /* Splash Screen Overlay */
+    #splash {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
+    }
+
+    /* Shimmer Progress Bar */
+    .progress-bar-fill {
+      transition: width 0.35s ease;
+      background: linear-gradient(90deg, #00875a 0%, #10b981 50%, #34d399 100%);
+      background-size: 200% 100%;
+      animation: shimmer 1.8s infinite linear;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* Target Web Iframe */
+    #appFrame {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body class="ecogreen-dark-bg antialiased selection:bg-ecogreen-600 selection:text-white">
+
+  <!-- ========================================================
+       SPLASH SCREEN (PABRIK PT ECOGREEN OLEOCHEMICALS)
+  ======================================================== -->
+  <div id="splash" class="ecogreen-dark-bg px-4 sm:px-6">
+    
+    <div class="max-w-2xl w-full flex flex-col items-center text-center animate-float-subtle">
+      
+      <!-- Container Logo dengan Background Putih Bersih -->
+      <div class="mb-7 bg-white px-8 py-3.5 rounded-2xl border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.35)] flex items-center justify-center">
+        <img 
+          src="https://www.ecogreenoleo.com/frontend/web/img/logo.png" 
+          alt="Logo PT Ecogreen Oleochemicals" 
+          class="h-9 sm:h-11 w-auto object-contain"
+        />
+      </div>
+
+      <!-- Pill Badge Kategori Industri Pabrik -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ecogreen-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold mb-5 tracking-wide backdrop-blur-md">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-soft"></span>
+        <span>NATURAL FATTY ALCOHOL &amp; DERIVATIVES</span>
+      </div>
+
+      <!-- Headline Pabrik Oleokimia -->
+      <h1 class="text-3xl sm:text-4xl md:text-[2.65rem] font-extrabold text-white tracking-tight leading-[1.22] mb-4">
+        PT ECOGREEN OLEOCHEMICALS <br>
+        <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-green-400 bg-clip-text text-transparent">
+          Manufaktur Oleokimia Berkelanjutan
+        </span>
+      </h1>
+
+      <!-- Deskripsi Industri Spesifik Produk Pabrik -->
+      <p class="text-slate-300 text-xs sm:text-sm font-normal max-w-xl leading-relaxed mb-8">
+        Memproduksi fatty alcohol alami, fatty acid, gliserin, dan ester berkualitas tinggi dari minyak nabati terbarukan untuk memasok kebutuhan industri kimia global secara terintegrasi.
+      </p>
+
+      <!-- Loading Section -->
+      <div class="w-full max-w-xs flex flex-col items-center gap-3">
+        <!-- Progress Bar Track -->
+        <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden border border-white/5 shadow-inner">
+          <div id="loadingProgress" class="progress-bar-fill h-full w-1/4 rounded-full"></div>
+        </div>
+
+        <!-- Spinner & Status Text -->
+        <div class="flex items-center gap-2.5 mt-1">
+          <div class="w-4 h-4 border-2 border-emerald-400/30 border-t-emerald-400 rounded-full animate-spin"></div>
+          <span id="loadingText" class="text-xs font-semibold text-emerald-300 tracking-wider uppercase">
+            Memuat Sistem...
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Copyright & Standar Mutu -->
+    <div class="absolute bottom-5 flex items-center gap-2 text-xs text-slate-400 font-medium">
+      <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+      </svg>
+      <span>RSPO SCC Certified &bull; &copy; PT Ecogreen Oleochemicals</span>
+    </div>
+
+  </div>
+
+  <!-- Target Web Iframe -->
+  <iframe
+    id="appFrame"
+    src="https://script.google.com/macros/s/AKfycbwgzqRUB1nzIqVwUB8k3WSzXW5b3RMp2yfEtCAtDGmjDPmDPgaZFbLx2fKAQokOajHDbg/exec"
+    allow="clipboard-read; clipboard-write"
+    allowfullscreen
+    onload="handleFrameReady()">
+  </iframe>
+
+  <!-- Script Pengontrol Transisi Pemuatan -->
+  <script>
+    let isLoaded = false;
+    const splash = document.getElementById("splash");
+    const appFrame = document.getElementById("appFrame");
+    const progressBar = document.getElementById("loadingProgress");
+    const loadingText = document.getElementById("loadingText");
+
+    let progress = 25;
+    const progressInterval = setInterval(() => {
+      if (progress < 85) {
+        progress += Math.floor(Math.random() * 12) + 5;
+        if (progress > 85) progress = 85;
+        progressBar.style.width = progress + "%";
+
+        if (progress > 50 && progress < 75) {
+          loadingText.innerText = "Menghubungkan Server...";
+        } else if (progress >= 75) {
+          loadingText.innerText = "Menyiapkan Sistem Pabrik...";
+        }
+      }
+    }, 450);
+
+    function handleFrameReady() {
+      if (isLoaded) return;
+      isLoaded = true;
+      clearInterval(progressInterval);
+
+      progressBar.style.width = "100%";
+      loadingText.innerText = "Sistem Siap!";
+
+      setTimeout(() => {
+        splash.style.opacity = "0";
+        splash.style.visibility = "hidden";
+        appFrame.style.display = "block";
+      }, 500);
+    }
+
+    // Fallback otomatis jika respons lambat
+    setTimeout(() => {
+      if (!isLoaded) {
+        handleFrameReady();
+      }
+    }, 8000);
+  </script>
+
+</body>
+</html>
